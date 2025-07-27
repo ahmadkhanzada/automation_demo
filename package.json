@@ -19,11 +19,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR_USERNAME/automation-demo.git"
+    "url": "https://github.com/ahmadkhanzada/automation_demo.git"
   },
-  "homepage": "https://github.com/YOUR_USERNAME/automation-demo#readme",
+  "homepage": "https://github.com/ahmadkhanzada/automation_demo#readme",
   "bugs": {
-    "url": "https://github.com/YOUR_USERNAME/automation-demo/issues"
+    "url": "https://github.com/ahmadkhanzada/automation_demo/issues"
   },
   "engines": {
     "node": ">=18.0.0",
@@ -40,7 +40,9 @@
   "scripts": {
     "dev": "concurrently -n api,web -c auto \"npm --workspace backend run dev\" \"npm --workspace frontend run dev\"",
     "test:api": "npm --workspace backend test",
-    "test:ui": "npm --workspace frontend run test:e2e",
+    "test:ui": "npm --workspace frontend run test:e2e:no-visual",
+    "test:ui:all": "npm --workspace frontend run test:e2e",
+    "test:ui:visual": "npm --workspace frontend run test:e2e:visual-only",
     "test": "npm run test:api && npm run test:ui"
   }
 }

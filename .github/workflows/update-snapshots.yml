@@ -1,0 +1,49 @@
+name: Update Visual Snapshots
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_message:
+        description: 'Commit message for snapshot updates'
+        required: false
+        default: 'chore: update visual snapshots'
+
+jobs:
+  update-snapshots:
+    name: Update Visual Snapshots
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+        
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+        working-directory: ./frontend
+        
+      - name: Update visual snapshots
+        run: npx playwright test --update-snapshots --grep "Visual Snapshots"
+        working-directory: ./frontend
+        
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add frontend/e2e/visual.spec.js-snapshots/
+          if git diff --staged --quiet; then
+            echo "No changes to snapshots"
+          else
+            git commit -m "${{ github.event.inputs.commit_message }}"
+            git push
+          fi

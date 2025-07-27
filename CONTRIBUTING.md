@@ -42,10 +42,22 @@ npm run test:api
 npm run test:ui
 ```
 
+### All UI Tests (including visual snapshots)
+```bash
+npm run test:ui:all
+```
+
+### Visual Snapshot Tests Only
+```bash
+npm run test:ui:visual
+```
+
 ### Update Visual Snapshots
 ```bash
 npm --workspace frontend run test:e2e:update-snapshots
 ```
+
+**Note**: Visual snapshots are platform-specific. The CI pipeline excludes visual tests by default to ensure consistent results across different operating systems.
 
 ## 📋 Development Guidelines
 

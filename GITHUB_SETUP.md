@@ -15,7 +15,7 @@ This guide will help you set up your automation-demo project on GitHub.
 1. Go to [GitHub](https://github.com) and sign in
 2. Click the "+" icon in the top right → "New repository"
 3. Fill in the details:
-   - **Repository name**: `automation-demo`
+   - **Repository name**: `automation_demo`
    - **Description**: "Complete monorepo demonstrating modern full-stack development with comprehensive testing using React, Node.js/Express, Jest, and Playwright"
    - **Visibility**: Public (recommended for demo purposes)
    - **Initialize**: ❌ Don't check any initialization options (we have files ready)
@@ -45,7 +45,7 @@ Replace `YOUR_USERNAME` with your actual GitHub username:
 
 ```bash
 git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/automation-demo.git
+git remote add origin https://github.com/ahmadkhanzada/automation_demo.git
 git push -u origin main
 ```
 
@@ -117,8 +117,8 @@ After pushing, go to your repository on GitHub and configure:
    
    ### 🚀 Quick Start
    ```bash
-   git clone https://github.com/YOUR_USERNAME/automation-demo.git
-   cd automation-demo
+   git clone https://github.com/ahmadkhanzada/automation_demo.git
+   cd automation_demo
    npm install
    npm run dev
    npm test

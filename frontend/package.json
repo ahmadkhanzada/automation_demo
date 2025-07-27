@@ -19,6 +19,8 @@
     "preview": "vite preview --port 5173",
     "test:e2e": "playwright test",
     "test:e2e:headed": "playwright test --headed",
+    "test:e2e:no-visual": "playwright test --grep-invert \"Visual Snapshots\"",
+    "test:e2e:visual-only": "playwright test --grep \"Visual Snapshots\"",
     "test:e2e:update-snapshots": "playwright test --update-snapshots"
   }
 }

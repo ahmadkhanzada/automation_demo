@@ -31,10 +31,16 @@ This starts both backend (port 3001) and frontend (port 5173) concurrently.
 # Backend API tests (Jest + Supertest)
 npm run test:api
 
-# Frontend E2E tests (Playwright)
+# Frontend E2E tests (Playwright) - excluding visual snapshots
 npm run test:ui
 
-# All tests
+# All UI tests including visual snapshots  
+npm run test:ui:all
+
+# Visual snapshot tests only
+npm run test:ui:visual
+
+# All tests (API + UI, excluding visual snapshots)
 npm test
 ```
 
