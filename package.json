@@ -1,0 +1,46 @@
+{
+  "name": "automation-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Complete monorepo demonstrating modern full-stack development with comprehensive testing using React, Node.js/Express, Jest, and Playwright",
+  "keywords": [
+    "automation",
+    "testing",
+    "react",
+    "nodejs",
+    "express",
+    "jest",
+    "playwright",
+    "monorepo",
+    "fullstack",
+    "demo"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/automation-demo.git"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/automation-demo#readme",
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/automation-demo/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "devDependencies": {
+    "concurrently": "^8",
+    "wait-on": "^7"
+  },
+  "scripts": {
+    "dev": "concurrently -n api,web -c auto \"npm --workspace backend run dev\" \"npm --workspace frontend run dev\"",
+    "test:api": "npm --workspace backend test",
+    "test:ui": "npm --workspace frontend run test:e2e",
+    "test": "npm run test:api && npm run test:ui"
+  }
+}

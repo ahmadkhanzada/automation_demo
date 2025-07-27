@@ -1,0 +1,24 @@
+{
+  "name": "automation-demo-frontend",
+  "version": "1.0.0",
+  "description": "Frontend React app for automation demo",
+  "type": "module",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1"
+  },
+  "devDependencies": {
+    "vite": "^4.4.5",
+    "@vitejs/plugin-react": "^4.0.3",
+    "@playwright/test": "^1.40.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 5173",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:update-snapshots": "playwright test --update-snapshots"
+  }
+}
